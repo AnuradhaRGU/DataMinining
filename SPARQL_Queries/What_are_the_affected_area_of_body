@@ -1,0 +1,16 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+SELECT ?name ?des
+WHERE 
+{
+  {
+  ?s a covid19:External.
+  ?s covid19:Description ?des.
+  ?s covid19:Name ?name
+  } 
+UNION 
+  {
+   ?s a covid19:Internal.
+   ?s covid19:Description ?des.
+   ?s covid19:Name ?name
+  } 
+}

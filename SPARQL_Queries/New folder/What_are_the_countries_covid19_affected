@@ -1,0 +1,9 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+
+SELECT ?name 
+WHERE 
+{
+  ?prev a covid19:Country.
+  ?prev covid19:Name ?name.
+
+}

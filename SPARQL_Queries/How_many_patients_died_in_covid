@@ -1,0 +1,8 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+
+SELECT (SUM(?pat) AS ?x)
+WHERE 
+{
+  ?prev a covid19:Deceased.
+  ?prev covid19:patNOFPatients ?pat. 
+}

@@ -1,0 +1,18 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+SELECT ?A  ?C ?E ?G ?I ?K ?L ?O
+WHERE 
+{
+  ?A covid19:patId 'CR01'.
+  ?A covid19:affected ?B.
+  ?B covid19:Name ?C.
+  ?A covid19:diagnosed ?D.
+  ?D covid19:Name ?E .
+  ?A covid19:has ?F.
+  ?F covid19:Name ?G .
+  ?A covid19:IsFrom ?H.
+  ?H covid19:Name ?I.
+  ?A covid19:InfectedFrom ?J.
+  ?J covid19:Name ?K.
+  ?A covid19:patNOFPatients ?L.
+  ?A covid19:patAgeRange ?O
+}

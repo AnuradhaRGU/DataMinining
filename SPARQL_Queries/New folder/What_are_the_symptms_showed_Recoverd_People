@@ -1,0 +1,9 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+
+SELECT  Distinct ?y
+WHERE 
+{
+  ?prev a covid19:Recovered.
+  ?prev covid19:had ?j.
+  ?j covid19:Name ?y.
+}

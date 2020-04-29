@@ -1,0 +1,17 @@
+prefix covid19:<http://localhost:8090/Covid19#>
+SELECT (SUM(?pat) As ?x) ?y
+WHERE 
+{
+  {
+  ?prev a covid19:Critical.
+  ?prev covid19:patAgeRange ?y. 
+  ?prev covid19:patNOFPatients ?pat. 
+  } 
+UNION 
+  {
+   ?prev a covid19:Mild.
+   ?prev covid19:patAgeRange ?y. 
+   ?prev covid19:patNOFPatients ?pat. 
+  } 
+}
+GROUP BY ?y

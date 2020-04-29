@@ -1,0 +1,8 @@
+prefix covid19:<http://localhost:8090/Covid19#> 
+SELECT  ?des
+WHERE   
+{   
+?prev a covid19:Prevention.
+OPTIONAL { ?prev covid19:Description ?des.  FILTER regex(?des, "hands"). }
+FILTER (!isBlank(?des)).
+}
